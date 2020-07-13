@@ -8,7 +8,7 @@
 <h1>
     My Recipes!
 </h1>
-<table style="max-width: 900px">
+<table>
     <tr>
         <td>prepTime</td>
         <td>cookTime</td>
@@ -32,8 +32,8 @@
         <td th:text="${recipes.url}"></td>
         <td th:text="${recipes.description}"></td>
         <td th:text="${recipes.notes.recipeNotes}"></td>
-        <td th:text="${categories}"></td>
-        <td th:text="${ingredients}"></td>
+        <td th:utext="${#strings.replace( #strings.escapeXml( categories ),T(java.lang.System).getProperty('line.separator'),'&lt;br /&gt;')}"></td>
+        <td th:utext="${#strings.replace( #strings.escapeXml( ingredients ),T(java.lang.System).getProperty('line.separator'),'&lt;br /&gt;')}"></td>
     </tr>
 
 

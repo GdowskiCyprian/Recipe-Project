@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.swing.text.html.HTML;
 import java.util.Optional;
 
 @Controller
@@ -43,7 +44,7 @@ public class IndexController {
             recipeService.getRecipes().get(i).getIngredients().toArray(myArray);
             String ingredientsCombined = "";
             for(int j=0;j<myArray.length;j++){
-                ingredientsCombined+=myArray[j].getDescription() + " " + myArray[j].getAmount().toString() +" "+ myArray[j].getUnitOfMeasure().getDescription() + " " ;
+                ingredientsCombined+=myArray[j].getDescription() + " " + myArray[j].getAmount().toString() +" "+ myArray[j].getUnitOfMeasure().getDescription() + System.lineSeparator();
 
             }
             ingredient.addAttribute("ingredients",ingredientsCombined);
