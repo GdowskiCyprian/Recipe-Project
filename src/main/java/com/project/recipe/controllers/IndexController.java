@@ -46,6 +46,7 @@ public class IndexController {
             for(int j=0;j<myArray.length;j++){
                 ingredientsCombined+=myArray[j].getDescription() + " " + myArray[j].getAmount().toString() +" "+ myArray[j].getUnitOfMeasure().getDescription() + System.lineSeparator();
 
+
             }
             ingredient.addAttribute("ingredients",ingredientsCombined);
         }
